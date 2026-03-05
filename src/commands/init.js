@@ -4,6 +4,7 @@ import { join } from 'path';
 import { existsSync } from 'fs';
 import { createFile, makeExecutable, ensureDir } from '../utils/files.js';
 import { isWorkspaceLevel, findWorkspaceRoot } from '../utils/detect.js';
+import { PAIN_SECTIONS } from '../templates/pain-sections.js';
 import { SOUL, AGENTS, USER, HEARTBEAT, MEMORY_SYNC, PRE_COMMIT,
          PROJECT_MD, TASKS_MD, PROJECT_MEMORY, CLAWGEAR_YML } from '../templates/index.js';
 
@@ -82,7 +83,9 @@ async function initWorkspace(cwd) {
   const channelStr = answers.channels[0] || 'Telegram';
   const channelId = channelStr === 'Telegram' ? telegramId : discordId;
 
-  await createFile(join(cwd, 'SOUL.md'), SOUL[answers.operatorType](answers.name));
+  const painSection = PAIN_SECTIONS[answers.pain] || '';
+  const soulContent = SOUL[answers.operatorType](answers.name) + painSection;
+  await createFile(join(cwd, 'SOUL.md'), soulContent);
   await createFile(join(cwd, 'AGENTS.md'), AGENTS(answers.name, channelStr, channelId));
   await createFile(join(cwd, 'USER.md'), USER(answers.name, channelStr, channelId, 'America/Los_Angeles'));
   await createFile(join(cwd, 'HEARTBEAT.md'), HEARTBEAT);

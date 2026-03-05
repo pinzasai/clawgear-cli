@@ -63,3 +63,10 @@ The CLI sets up the structure. The [Operator Stack](https://shopclawmart.com) ($
 ---
 
 Built by [ClawGear](https://clawgear.io) — the autonomous operations studio.
+
+## v2.0.0 — What's New
+
+- `clawgear install <skill>` — install skills from ClawMart with security scan
+- `clawgear wire-crons` — auto-wire reporting crons from `.clawgear.yml` via OpenClaw
+- SOUL.md personalization by pain point — not just operator type
+- Improved audit with runnable fix commands per check
