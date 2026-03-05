@@ -1,0 +1,37 @@
+{
+  "name": "clawgear",
+  "version": "1.0.0",
+  "description": "Configure production OpenClaw agent stacks from your terminal",
+  "type": "module",
+  "bin": {
+    "clawgear": "bin/clawgear.js"
+  },
+  "scripts": {
+    "test": "node bin/clawgear.js --version"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "chalk": "^5.3.0"
+  },
+  "keywords": [
+    "openclaw",
+    "agent",
+    "ai",
+    "cli",
+    "clawgear",
+    "llm",
+    "automation"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clawgear/clawgear-cli"
+  },
+  "homepage": "https://clawgear.io",
+  "bugs": {
+    "url": "https://github.com/clawgear/clawgear-cli/issues"
+  }
+}
